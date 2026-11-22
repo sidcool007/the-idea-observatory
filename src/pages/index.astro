@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const sections = [
+  { number: "01", name: "Science & Discovery", note: "The universe, life and the questions that move us." },
+  { number: "02", name: "Technology & AI", note: "The systems reshaping how we live and work." },
+  { number: "03", name: "History & Civilisations", note: "The past, examined with fresh perspective." },
+  { number: "04", name: "Mind & Philosophy", note: "Ideas about thought, meaning and being human." },
+  { number: "05", name: "Business & Money", note: "The forces behind markets, work and wealth." },
+  { number: "06", name: "World & Culture", note: "People, societies and the stories between them." },
+  { number: "07", name: "Travel & Places", note: "A deeper sense of place and belonging." },
+  { number: "08", name: "Life & Living", note: "Practical perspectives for a considered life." }
+];
+---
+<BaseLayout>
+  <div class="announcement"><span class="announcement-dot"></span> A new perspective is taking shape <span class="announcement-line"></span> <span class="announcement-index">VOL. 01 · 2026</span></div>
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="The Idea Observatory home">
+      <span class="mark" aria-hidden="true"><span></span><i></i></span>
+      <span class="wordmark-text">THE IDEA<br />OBSERVATORY</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#about">Our perspective</a>
+      <a href="#sections">Explore subjects</a>
+      <a class="nav-contact" href="mailto:editor@theideaobservatory.com">Get in touch <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-kicker"><span>AN INDEPENDENT JOURNAL OF IDEAS</span><span class="kicker-rule"></span><span>EST. 2026</span></div>
+      <h1>Look closer.<br /><em>Understand</em> deeper.</h1>
+      <div class="hero-bottom">
+        <p class="hero-intro">A place for curious minds. We explore the ideas, discoveries and stories that make the world more intelligible.</p>
+        <a class="explore-link" href="#sections"><span class="explore-icon">↓</span><span>Explore the observatory</span></a>
+      </div>
+      <div class="orbit-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+        <div class="orbit-core"><span></span></div><div class="orbit-star star-one">✳</div><div class="orbit-star star-two">✦</div>
+      </div>
+      <div class="hero-caption"><span>FIG. 001</span><span>THE PURSUIT OF PERSPECTIVE</span><span>28° 36′ N · 77° 12′ E</span></div>
+    </section>
+
+    <section class="intro-section" id="about">
+      <div class="section-label"><span>01 / OUR PERSPECTIVE</span><span class="section-line"></span></div>
+      <div class="intro-grid">
+        <h2>Curiosity is<br />a way of <em>seeing.</em></h2>
+        <div class="intro-copy">
+          <p class="lead">The world is full of information. Understanding asks for something more.</p>
+          <p>The Idea Observatory is an independent publication built around thoughtful inquiry. We bring context to complexity, connect ideas across disciplines and make room for the questions worth asking.</p>
+          <p>No noise for its own sake. No shortcuts in the pursuit of clarity. Just considered perspectives, grounded in research and made for curious people everywhere.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="subjects-section" id="sections">
+      <div class="section-label"><span>02 / THE FIELD OF VIEW</span><span class="section-line"></span><span>8 AREAS OF INQUIRY</span></div>
+      <div class="subjects-heading"><h2>Explore the <em>subjects.</em></h2><p>Different lenses. One shared curiosity.</p></div>
+      <div class="subject-list">
+        {sections.map((section) => <a class="subject-row" href="mailto:editor@theideaobservatory.com?subject=Explore%20{encodeURIComponent(section.name)}">
+          <span class="subject-number">{section.number}</span><span class="subject-name">{section.name}</span><span class="subject-note">{section.note}</span><span class="subject-arrow">↗</span>
+        </a>)}
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <span class="manifesto-mark">“</span>
+      <p>Better questions<br />make a <em>better world.</em></p>
+      <span class="manifesto-caption">A NOTE ON WHY WE'RE HERE</span>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark footer-wordmark" href="/"><span class="mark" aria-hidden="true"><span></span><i></i></span><span class="wordmark-text">THE IDEA<br />OBSERVATORY</span></a>
+    <div class="footer-tagline">Look Closer. Understand Deeper.</div>
+    <div class="footer-meta"><span>INDEPENDENTLY CURIOUS. EDITORIALLY CONSIDERED.</span><span>© 2026 THE IDEA OBSERVATORY</span></div>
+  </footer>
+</BaseLayout>
